@@ -44,12 +44,12 @@ describe('utils', () => {
       expect(handValue(hand)).toBe(16)
     })
 
-    it('should count ace as 10 if the value is less that 21', () => {
+    it('should count ace as 11 if the value is less that 21', () => {
       const hand = [
         {suit: 'clubs', value: 8},
         {suit: 'spades', value: 'A'},
       ]
-      expect(handValue(hand)).toBe(18)
+      expect(handValue(hand)).toBe(19)
     })
   })
 })

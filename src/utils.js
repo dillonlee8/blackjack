@@ -18,16 +18,23 @@ function shuffleCards(cards) {
 
 function handValue(hand) {
 
+  let hasAce = false
+
   let value = hand.reduce((acc, curr) => {
     if(typeof curr.value === 'number'){
-      return {value: acc.value + curr.value}
+      return acc + curr.value
+    }
+
+    if(curr.value === 'A') {
+      hasAce = true
+      return acc + 11
     }
     
-    return acc.value + 10
-  })
+    return acc + 10
+  }, 0)
 
-  if(value > 21 && hand.some(card => card.value === 'A')) {
-    return value - 9
+  if(value > 21 && hasAce) {
+    return value - 10
   }
 
   return value
