@@ -13,6 +13,13 @@ describe('utils', () => {
       expect(shuffledCards.length).toEqual(cards.length)
     })
 
+    it('should have the same structure in the items returned', () => {
+      expect(shuffledCards[0]).toEqual(expect.objectContaining({
+        suit: expect.any(String),
+        value: expect.anything(),
+      }))
+    })
+
     it('should randomize the cards', () => {
       expect(JSON.stringify(shuffledCards)).not.toEqual(JSON.stringify(cards))
     })
