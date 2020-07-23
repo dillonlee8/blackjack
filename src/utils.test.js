@@ -1,5 +1,5 @@
 import cards from './data/deck_of_cards.json'
-import { shuffleCards } from './utils'
+import { shuffleCards, handValue } from './utils'
 
 describe('utils', () => {
 
@@ -22,6 +22,34 @@ describe('utils', () => {
 
     it('should randomize the cards', () => {
       expect(JSON.stringify(shuffledCards)).not.toEqual(JSON.stringify(cards))
+    })
+  })
+
+  describe('handValue', () => {
+    it('should calculate the hand value', () => {
+      const hand = [
+        {suit: 'clubs', value: 4},
+        {suit: 'hearts', value: 2},
+        {suit: 'spades', value: 'K'},
+      ]
+      expect(handValue(hand)).toBe(16)
+    })
+
+    it('should count ace as 1 if the value is over 21', () => {
+      const hand = [
+        {suit: 'clubs', value: 8},
+        {suit: 'hearts', value: 7},
+        {suit: 'spades', value: 'A'},
+      ]
+      expect(handValue(hand)).toBe(16)
+    })
+
+    it('should count ace as 10 if the value is less that 21', () => {
+      const hand = [
+        {suit: 'clubs', value: 8},
+        {suit: 'spades', value: 'A'},
+      ]
+      expect(handValue(hand)).toBe(18)
     })
   })
 })

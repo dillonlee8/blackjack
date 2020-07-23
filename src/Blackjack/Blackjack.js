@@ -27,12 +27,15 @@ function Blackjack() {
   return (
     <div>
       <div className="dealerHand">
-        {playerHand.map(({suit, value}) => (
+      <h2>Dealer</h2>
+        {dealerHand.map(({suit, value}) => (
           <div key={suit+value} className="card">{suit} {value}</div>
         ))}
       </div>
+
       <div className="playerHand">
-        {dealerHand.map(({suit, value}) => (
+      <h2>Player</h2>
+        {playerHand.map(({suit, value}) => (
           <div key={suit+value} className="card">{suit} {value}</div>
         ))}
       </div>

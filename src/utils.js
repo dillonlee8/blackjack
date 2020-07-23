@@ -1,5 +1,6 @@
 export {
-  shuffleCards
+  shuffleCards,
+  handValue
 }
 
 function shuffleCards(cards) {
@@ -13,4 +14,21 @@ function shuffleCards(cards) {
   }
 
   return shuffledCards
+}
+
+function handValue(hand) {
+
+  let value = hand.reduce((acc, curr) => {
+    if(typeof curr.value === 'number'){
+      return {value: acc.value + curr.value}
+    }
+    
+    return acc.value + 10
+  })
+
+  if(value > 21 && hand.some(card => card.value === 'A')) {
+    return value - 9
+  }
+
+  return value
 }
