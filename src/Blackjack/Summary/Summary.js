@@ -5,9 +5,9 @@ function Summary({playerPoints, dealerPoints}) {
 
   return (
     <div data-testid="summary">
-      {playerWins ? <p>YOU WIN!</p> : <p>DEALER WINS</p>}
-      <p>player points {playerPoints}</p>
-      <p>dealer points {dealerPoints}</p>
+      {playerWins ? <p>YOU WIN!</p> : <p>DEALER WINS!</p>}
+      <p>Player points: {playerPoints}</p>
+      <p>Dealer points: {dealerPoints}</p>
     </div>
   )
 }
