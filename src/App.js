@@ -1,5 +1,5 @@
-import React from 'react';
-import Blackjack from './Blackjack/Blackjack';
+import React from 'react'
+import Blackjack from './Blackjack/Blackjack'
 
 function App() {
   return (

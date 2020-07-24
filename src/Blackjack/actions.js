@@ -1,0 +1,5 @@
+export const START_GAME = 'START_GAME'
+export const DEAL_PLAYER_CARD = 'DEAL_PLAYER_CARD'
+export const DEAL_DEALER_CARD = 'DEAL_DEALER_CARD'
+export const PLAYER_FINISHED = 'PLAYER_FINISHED'
+export const FINISH_GAME = 'FINISH_GAME'
