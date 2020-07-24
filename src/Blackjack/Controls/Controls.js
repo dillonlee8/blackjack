@@ -1,7 +1,7 @@
 import React from 'react'
 import {DEAL_PLAYER_CARD, DEAL_DEALER_CARD, PLAYER_FINISHED } from '../actions'
 
-function Controls({playerPoints, dispatch}) {
+function Controls({dispatch}) {
   function hit() {
     dispatch({type: DEAL_PLAYER_CARD})
   }
@@ -12,7 +12,7 @@ function Controls({playerPoints, dispatch}) {
   }
   return (
     <div>
-        <button disabled={playerPoints === 21} onClick={hit}>Hit</button>
+        <button onClick={hit}>Hit</button>
         <button onClick={stick}>Stick</button>
     </div>
   )
