@@ -39,12 +39,14 @@ function Blackjack() {
         holder="Dealer"
         hand={dealerHand}
         points={dealerPoints}
+        testid="dealer-hand"
       />
         
       <Hand 
         holder="Player"
         hand={playerHand}
         points={playerPoints}
+        testid="player-hand"
       />
 
       <Controls playerPoints={playerPoints} dispatch={dispatch}/>
