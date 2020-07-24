@@ -1,0 +1,25 @@
+.hand{
+  background-color: green;
+  min-height: 200px
+}
+
+.header {
+  margin: 0
+}
+
+.handRow {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  height: 150px;
+  background: white;
+  width: 100px;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.dealerCard {
+ background-color: red;
+}

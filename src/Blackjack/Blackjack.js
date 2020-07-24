@@ -1,5 +1,4 @@
 import React, { useReducer } from 'react'
-import Hand from './Hand/Hand'
 import { 
   START_GAME, 
   DEAL_PLAYER_CARD, 
@@ -8,6 +7,9 @@ import {
 import { initialState, reducer } from './reducer'
 import Controls from './Controls/Controls'
 import Summary from './Summary/Summary'
+import style from './Blackjack.module.css'
+import DealerHand from './Hand/DealerHand/DealerHand'
+import PlayerHand from './Hand/PlayerHand/PlayerHand'
 
 
 function Blackjack() {
@@ -26,32 +28,29 @@ function Blackjack() {
   }
 
   if(!gameStarted) {
-    return <button onClick={play}>PLAY</button>
-  }
-
-  if(gameFinished) {
-    return <Summary playerPoints={playerPoints} dealerPoints={dealerPoints}/>
+    return <button className={style.playButton} onClick={play}>PLAY</button>
   }
 
   return (
-    <div>
-      <Hand 
-        holder="Dealer"
+    <div className={style.container}>
+      <DealerHand
         hand={dealerHand}
         points={dealerPoints}
-        testid="dealer-hand"
-      />
-        
-      <Hand 
-        holder="Player"
+        gameFinished={gameFinished}
+       />
+
+      <PlayerHand 
         hand={playerHand}
         points={playerPoints}
-        testid="player-hand"
       />
-
-      <Controls playerPoints={playerPoints} dispatch={dispatch}/>
+      
+      {!gameFinished 
+      ? <Controls playerPoints={playerPoints} dispatch={dispatch}/> 
+      : <Summary playerPoints={playerPoints} dealerPoints={dealerPoints}/>}
+      
     </div>
   )
 }
+
 
 export default Blackjack;

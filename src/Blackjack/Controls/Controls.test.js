@@ -1,6 +1,6 @@
 import React from 'react'
-import { render, fireEvent } from '@testing-library/react';
-import Controls from './Controls';
+import { render, fireEvent } from '@testing-library/react'
+import Controls from './Controls'
 
 describe('Controls', () => {
   let app

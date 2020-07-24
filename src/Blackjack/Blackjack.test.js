@@ -1,6 +1,6 @@
 import React from 'react'
-import { render, fireEvent, within } from '@testing-library/react';
-import Blackjack from './Blackjack';
+import { render, fireEvent, within } from '@testing-library/react'
+import Blackjack from './Blackjack'
 
 describe('Blackjack', () => {
   let app

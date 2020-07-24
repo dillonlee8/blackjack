@@ -1,0 +1,13 @@
+.container {
+  width: 100%;
+}
+
+.playButton {
+  font-size: 3rem;
+  color: white;
+  border: none;
+  background-color: blue;
+  border-radius: 5px;
+  padding: 0.5rem;
+  margin: 0 auto;
+}

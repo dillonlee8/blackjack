@@ -1,9 +1,10 @@
 import React from 'react'
 import Blackjack from './Blackjack/Blackjack'
+import style from './App.module.css'
 
 function App() {
   return (
-    <main>
+    <main className={style.main}>
       <Blackjack />
     </main>
   );
